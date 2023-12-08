@@ -1,46 +1,57 @@
-# Getting Started with Create React App
+# Movie List App Coding Task
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+Welcome to the Heimdall Powers Movie List App coding task! This task is designed to assess your skills in building a front-end application using React and TypeScript. The goal is to create a movie list application that fetches data from the TMDB API and allows users to search for movies, view a list of popular movies, and see detailed information about each movie.
 
-In the project directory, you can run:
+This repository includes code fetching and displaying popular movies without any styling. You can use this as a starting point or create your own project using Create React App or any other preferred method.
 
-### `npm start`
+## Exercise
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Exercise 1: Styling and responsive layout
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Add styling to the popular movie list. You do not need to focus too much on pretty design but the styling should be functional and responsive.
+You can try to recreate the style below or make your own.
+![Heimdall_movies](./images/heimdall_movies.png)
 
-### `npm test`
+### Exercise 2: Movie Details Page
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Create a separate page or modal that displays detailed information about a selected movie when a user clicks on a movie in the list. Display additional information such as overview, genres, and any other relevant details.
 
-### `npm run build`
+### Exercise 3: Search and Filter
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Add a search bar that allows users to search for movies by title. Also, provide options to filter movies by release year or any other relevant criteria.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Exercise 4: Loading and Error Handling
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Implement loading indicators while fetching data and handle errors gracefully by displaying an error message when the API request fails.
 
-### `npm run eject`
+### Exercise 5: Bonus (Optional)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Implement additional features such as pagination for the movie list, sorting options, search as you type, or a "favorites" functionality where users can add movies to their favorites list.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Evaluation Criteria
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Your submission will be evaluated based on the following criteria:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+-   **Code Structure and Organization:** Check how well your code is organized and if it follows best practices for React and TypeScript development.
+-   **Component Composition:** Assess the use of React components and their composition in the application.
+-   **State Management:** Evaluate how well React state is used to manage the state of the application.
+-   **API Integration:** Check if your app successfully fetches and displays data from the TMDB API.
+-   **User Interface and Experience:** Assess the overall user interface design and user experience of the application.
+-   **Error Handling and Loading:** Check how errors are handled, and if there are loading indicators during API requests.
+-   **Bonus Features (if implemented):** If you implemented bonus features, we will assess the quality and functionality of those features.
 
-## Learn More
+## Submitting Your Solution
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+When you're ready to submit your solution, follow these steps:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Commit your changes to your forked repository.
+2. Send us a link to that repository
+   or
+3. zip your solution
+4. send the zip attached in a mail
+
+Feel free to use any additional libraries or tools you find appropriate.
+
+Good luck, and happy coding!
