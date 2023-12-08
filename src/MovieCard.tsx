@@ -34,11 +34,34 @@ const VoteScore = styled.p`
   border-radius: 4px;
 `;
 
+const FavoriteButton = styled.button<{ isFavorite: boolean }>`
+  position: absolute;
+  margin: 10px;
+  font-size: 1.5rem;
+  border: 0;
+  border-radius: 100px;
+  color: ${({ isFavorite }) => (isFavorite ? "gold" : "gray")};
+`;
+
 const roundToDecimal = (num: number) => Math.round(num * 10) / 10;
 
-const MovieList = ({ movie }: { movie: Movie }) => {
+const MovieList = ({
+  movie,
+  isFavorite,
+  toggleIsFavorite,
+}: {
+  movie: Movie;
+  isFavorite: boolean;
+  toggleIsFavorite: (movieId: string) => void;
+}) => {
   return (
     <CardWrapper>
+      <FavoriteButton
+        onClick={() => toggleIsFavorite(movie.id)}
+        isFavorite={isFavorite}
+      >
+        {isFavorite ? "★" : "☆"}
+      </FavoriteButton>
       <img
         src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
         alt={movie.title}

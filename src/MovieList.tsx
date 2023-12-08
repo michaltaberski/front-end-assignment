@@ -1,6 +1,7 @@
 import { Movie } from "./types";
 import MovieCard from "./MovieCard";
 import styled from "styled-components";
+import { StatusText } from "./styles";
 
 const MoviesGridWrapper = styled.div`
   display: grid;
@@ -20,13 +21,30 @@ const MoviesGridWrapper = styled.div`
   }
 `;
 
-const MovieList = ({ movies }: { movies: Movie[] }) => {
-  return (
+type MovieListProps = {
+  movies: Movie[];
+  favoriteMovieIds: string[];
+  toggleIsFavorite: (movieId: string) => void;
+};
+
+const MovieList = ({
+  movies,
+  favoriteMovieIds,
+  toggleIsFavorite,
+}: MovieListProps) => {
+  return movies.length ? (
     <MoviesGridWrapper>
       {movies.map((movie) => (
-        <MovieCard key={movie.id} movie={movie} />
+        <MovieCard
+          key={movie.id}
+          movie={movie}
+          toggleIsFavorite={toggleIsFavorite}
+          isFavorite={favoriteMovieIds.includes(movie.id)}
+        />
       ))}
     </MoviesGridWrapper>
+  ) : (
+    <StatusText>No movies found</StatusText>
   );
 };
 

@@ -42,3 +42,10 @@ export const SearchInput = styled.input`
 export const SelectInput = styled.select`
   ${inputStyle};
 `;
+
+export const StatusText = styled.p`
+  margin: 0 2rem;
+  font-size: 2rem;
+  text-align: center;
+  color: #fff;
+`;

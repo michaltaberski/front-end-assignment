@@ -1,5 +1,49 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Movie, SearchParams } from "./types";
+import { fetchPopularMovies } from "./api";
+
+export const useFavoriteMovies = () => {
+  const initialData = JSON.parse(
+    localStorage.getItem("favoriteMovies") || "[]"
+  );
+
+  const [favoriteMovieIds, setFavoriteMovieIds] =
+    useState<string[]>(initialData); // [1, 2, 3
+
+  useEffect(() => {
+    localStorage.setItem("favoriteMovies", JSON.stringify(favoriteMovieIds));
+  }, [favoriteMovieIds]);
+
+  const toggleIsFavorite = (movieId: string) => {
+    setFavoriteMovieIds((prev) =>
+      prev.includes(movieId)
+        ? prev.filter((id) => id !== movieId)
+        : [...prev, movieId]
+    );
+  };
+  return { favoriteMovieIds, toggleIsFavorite };
+};
+
+export const useFetchMovies = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const [hasError, setHasError] = useState(false);
+
+  const [movies, setMovies] = useState<Movie[]>([]);
+  useEffect(() => {
+    (async () => {
+      setIsLoading(true);
+      setHasError(false);
+      try {
+        const jsonResponse = await fetchPopularMovies();
+        setMovies(jsonResponse.results);
+      } catch (error) {
+        setHasError(true);
+      }
+      setIsLoading(false);
+    })();
+  }, []);
+  return { movies, hasError, isLoading };
+};
 
 export const useSearch = (
   initialParams: SearchParams,
