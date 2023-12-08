@@ -1,24 +1,32 @@
-import { FC } from "react";
+import { Movie } from "./types";
+import MovieCard from "./MovieCard";
+import styled from "styled-components";
 
-interface MovieListProps {
-  movies: any[];
-}
+const MoviesGridWrapper = styled.div`
+  display: grid;
+  gap: 20px;
 
-const MovieList: FC<MovieListProps> = ({ movies }) => {
+  // Mobile first (1 column)
+  grid-template-columns: 1fr;
+
+  // 2 columns
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // 4 columns
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+`;
+
+const MovieList = ({ movies }: { movies: Movie[] }) => {
   return (
-    <div>
+    <MoviesGridWrapper>
       {movies.map((movie) => (
-        <div key={movie.id}>
-          <img
-            src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
-            alt={movie.title}
-          />
-          <p>{movie.title}</p>
-          <p>{movie.vote_average}</p>
-          <p>{movie.release_date}</p>
-        </div>
+        <MovieCard key={movie.id} movie={movie} />
       ))}
-    </div>
+    </MoviesGridWrapper>
   );
 };
 
