@@ -14,33 +14,17 @@ Add styling to the popular movie list. You do not need to focus too much on pret
 You can try to recreate the style below or make your own.
 ![Heimdall_movies](./images/heimdall_movies.png)
 
-### Exercise 2: Movie Details Page
-
-Create a separate page or modal that displays detailed information about a selected movie when a user clicks on a movie in the list. Display additional information such as overview, genres, and any other relevant details.
-
-### Exercise 3: Search and Filter
+### Exercise 2: Search and Filter
 
 Add a search bar that allows users to search for movies by title. Also, provide options to filter movies by release year or any other relevant criteria.
 
-### Exercise 4: Loading and Error Handling
+### Exercise 3: Loading and Error Handling
 
 Implement loading indicators while fetching data and handle errors gracefully by displaying an error message when the API request fails.
 
-### Exercise 5: Bonus (Optional)
+### Exercise 4: Bonus (Optional)
 
 Implement additional features such as pagination for the movie list, sorting options, search as you type, or a "favorites" functionality where users can add movies to their favorites list.
-
-## Evaluation Criteria
-
-Your submission will be evaluated based on the following criteria:
-
--   **Code Structure and Organization:** Check how well your code is organized and if it follows best practices for React and TypeScript development.
--   **Component Composition:** Assess the use of React components and their composition in the application.
--   **State Management:** Evaluate how well React state is used to manage the state of the application.
--   **API Integration:** Check if your app successfully fetches and displays data from the TMDB API.
--   **User Interface and Experience:** Assess the overall user interface design and user experience of the application.
--   **Error Handling and Loading:** Check how errors are handled, and if there are loading indicators during API requests.
--   **Bonus Features (if implemented):** If you implemented bonus features, we will assess the quality and functionality of those features.
 
 ## Submitting Your Solution
 

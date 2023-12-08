@@ -12,11 +12,3 @@ export const fetchPopularMovies = async () => {
     const data = await response.json()
     return data
 }
-
-export const fetchMovieDetails = async (movieId: number) => {
-    const response = await fetch(
-        `https://api.themoviedb.org/3/movie/${movieId}?api_key=${TMDB_API_KEY}`
-    )
-    const data = await response.json()
-    return data
-}
