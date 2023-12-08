@@ -8,6 +8,8 @@ This repository includes code fetching and displaying popular movies without any
 
 ## Exercise
 
+You should spend about 2-3 hours on this assignment, don't worry if you can't finish all the exercises.
+
 ### Exercise 1: Styling and responsive layout
 
 Add styling to the popular movie list. You do not need to focus too much on pretty design but the styling should be functional and responsive.
@@ -32,9 +34,11 @@ When you're ready to submit your solution, follow these steps:
 
 1. Commit your changes to your forked repository.
 2. Send us a link to that repository
-   or
-3. zip your solution
-4. send the zip attached in a mail
+
+or
+
+1. zip your solution
+2. send the zip attached in a mail
 
 Feel free to use any additional libraries or tools you find appropriate.
 
