@@ -1,21 +1,61 @@
-import { FC, useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import { SearchInput } from "./styles";
+import styled from "styled-components";
+import { SearchParams } from "./types";
+import Select from "./Select";
+import times from "lodash/times";
+import { useSearch } from "./utils";
 
-interface Props {}
+const FlexWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+  gap: 20px;
+`;
 
-const SearchBar: FC<Props> = () => {
-    const [query, setQuery] = useState<string>('')
+type SearchBarProps = {
+  initialParams: SearchParams;
+  onChange: (params: SearchParams) => void;
+};
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setQuery(event.target.value)
-    }
+const SearchBar = ({ initialParams, onChange }: SearchBarProps) => {
+  const { searchParams, updateParams } = useSearch(initialParams, onChange);
 
-    return (
-        <div>
-            <input type='text' value={query} onChange={handleInputChange} placeholder='Search...' />
-            <button>Search</button>
-        </div>
-    )
-}
+  return (
+    <FlexWrapper>
+      <SearchInput
+        type="text"
+        value={searchParams.pharse}
+        onChange={(e) => {
+          updateParams({ pharse: e.target.value });
+        }}
+        placeholder="Search..."
+      />
+      <Select
+        label="Min rating: "
+        onChange={(value) => {
+          updateParams({ minAvgRating: +value });
+        }}
+        options={times(10, (index) => ({
+          value: index,
+          label: `${index}+`,
+        }))}
+      />
+      <Select
+        label="Sort by: "
+        onChange={(value) => {
+          updateParams({ sortBy: value as "title" | "rating" | "releaseDate" });
+        }}
+        options={[
+          { value: "title", label: "Title" },
+          { value: "rating", label: "Rating" },
+          { value: "releaseDate", label: "Release date" },
+        ]}
+      />
+    </FlexWrapper>
+  );
+};
 
-export default SearchBar
+export default SearchBar;
